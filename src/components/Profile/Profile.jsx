@@ -1,9 +1,10 @@
 import MyPosts from "./MyPosts/MyPosts";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Profile = () => {
     return (
       <div className='content pt-6'>
-        <div className="text-2xl mb-4">ava + desc</div>
+        <ProfileInfo/>
         <MyPosts />
       </div>
     );

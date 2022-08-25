@@ -1,7 +1,7 @@
 
 const Post = (props) => {
     return (
-      <div className="mt-1">
+      <div className="mt-1 flex flex-col items-center">
         <div className="flex items-center justify-center flex-row-reverse">
           <div>Post user name</div>
           <div className="rounded-full w-12 h-12">

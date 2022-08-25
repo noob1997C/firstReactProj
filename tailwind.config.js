@@ -29,7 +29,6 @@ module.exports = {
             backgroundColor: '#cc1f1a'
           },
         },
-
         '.outline-black': {
           outline: '2px dotted black',
           outlineOffset: '2px',
@@ -37,6 +36,23 @@ module.exports = {
         '.outline-white': {
           outline: '2px dotted white',
           outlineOffset: '2px',
+        },
+        '.message': {
+          borderWidth: '2px',
+          borderRadius: '20px',
+          display: 'block',
+          maxWidth: '100%',
+          marginTop: '4px',
+          padding: '4px',
+        },
+        '.dialog-item': {
+          color: '#00628c',
+          fontSize: '1.125rem',
+          marginTop: '4px',
+        },
+        '.dialog-item.active': {
+          textDecoration: 'underline',
+          color: 'red',
         },
       })
     })

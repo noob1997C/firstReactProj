@@ -31,9 +31,12 @@
   color: red;
 }
 
+.nav a.active {
+  color: red;
+}
+
 .content {
   grid-area: c;
-  text-align: center;
 }
 
 
