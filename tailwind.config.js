@@ -54,6 +54,12 @@ module.exports = {
           textDecoration: 'underline',
           color: 'red',
         },
+        '.posts': {
+          display: 'flex',
+          alignItems: 'start',
+          justifyContent: 'start',
+          flexDirection: 'column',
+        },
       })
     })
   ],
