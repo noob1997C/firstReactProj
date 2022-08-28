@@ -3,10 +3,11 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 
 const Profile = (props) => {
+  // debugger;
     return (
       <div className='content pt-6'>
         <ProfileInfo/>
-        <MyPosts posts={props.posts.postsData}/>
+        <MyPosts posts={props.posts.postsData} addPost={props.addPost}/>
       </div>
     );
 }

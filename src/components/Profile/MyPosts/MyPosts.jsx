@@ -2,7 +2,7 @@ import React from "react";
 import Post from "./Post/Post";
 
 const MyPosts = (props) => {
-
+// debugger;
   let postsElement = props.posts.map((post) => 
     <Post likeCount={post.likeCount} message={post.message}/>
   );
@@ -10,8 +10,10 @@ const MyPosts = (props) => {
   const newPostElement = React.createRef();
 
   const addPost = () => {
+    // debugger;
     const text = newPostElement.current.value;
-    alert(text);
+    props.addPost(text);
+    newPostElement.current.value = '';
   };
 
     return (
