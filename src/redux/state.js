@@ -8,6 +8,7 @@ let state = {
             {id: 3, likeCount: 12, message: 'How are your it-kamasutra?'},
             {id: 4, likeCount: 14, message: 'Yo'},
           ],
+        newPostText: 'this is default text',
     },
     messagesPage: {
         messagesData : [
@@ -27,15 +28,24 @@ let state = {
     },
 }
 
-export const addPost = (postMessage) => {
+export const addPost = () => {
   // debugger;
   const newPost = {
     id: 5,
     likeCount: 0,
-    message: postMessage,
+    message: state.profilePage.newPostText,
   };
   state.profilePage.postsData.push(newPost);
+  state.profilePage.newPostText = '';
+  rerenderEntireTree(state);
+};
+
+export const updateNewPostText = (newText) => {
+  // debugger;
+  state.profilePage.newPostText = newText;
   rerenderEntireTree(state);
 };
 
 export default state;
+
+window.state = state;
