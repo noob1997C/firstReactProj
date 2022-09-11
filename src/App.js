@@ -19,7 +19,7 @@ function App(props) {
           <Navbar />
           <div className='app-wrapper-content'>
             <Routes>
-              <Route path='/messages' element={<Messages messages={props.state.messagesPage}/>}/>
+              <Route path='/messages' element={<Messages store={props.store} messages={props.state.messagesPage}/>}/>
               <Route path='/profile' element={<Profile profilePage={props.state.profilePage} 
                                                        dispatch={props.dispatch}/>}/>
               <Route path='/music' element={<Music/>}/>
