@@ -1,20 +1,17 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
-export const addPostActionCreater = () => {
-  return {
-    type: ADD_POST,
-  }
+const initialState = {
+  postsData: [
+    { id: 1, likeCount: 15, message: 'Hi how are you' },
+    { id: 2, likeCount: 10, message: "It's my first post" },
+    { id: 3, likeCount: 12, message: 'How are your it-kamasutra?' },
+    { id: 4, likeCount: 14, message: 'Yo' },
+  ],
+  newPostText: 'this is default text',
 }
 
-export const updateNewPostActionCreater = (text) => {
-  return {
-    type: UPDATE_NEW_POST_TEXT,
-    newText: text,
-  }
-}
-
-const profileReducer = (state, action) => {
+const profileReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_POST:
       // debugger;
@@ -33,6 +30,19 @@ const profileReducer = (state, action) => {
       return state;
     default:
       return state;
+  }
+}
+
+export const addPostActionCreater = () => {
+  return {
+    type: ADD_POST,
+  }
+}
+
+export const updateNewPostActionCreater = (text) => {
+  return {
+    type: UPDATE_NEW_POST_TEXT,
+    newText: text,
   }
 }
 

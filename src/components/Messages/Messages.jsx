@@ -4,21 +4,23 @@ import { updateNewMessageTextCreater, sendMessageCreater } from "../../redux/mes
 
 const Messages = (props) => {
 
-  let dialogElements = props.messages.dialogsData.map((dialog) => 
+  const state = props.messagesPage;
+
+  let dialogElements = state.dialogsData.map((dialog) => 
     <DialogItem name={dialog.name} id={dialog.id}/>
   );
 
-  let messagesElements = props.messages.messagesData.map((message) => 
+  let messagesElements = state.messagesData.map((message) => 
     <Message message={message.message}/>
   );
 
   let onSendMessageClick = () => {
-    props.store.dispatch(sendMessageCreater());
+    props.sendMessage();
   };
 
   let onNewMessageChange = (event) => {
     const newMessageText = event.target.value;
-    props.store.dispatch(updateNewMessageTextCreater(newMessageText));
+    props.updateNewMessageText(newMessageText);
   };
 
     return (
@@ -29,7 +31,7 @@ const Messages = (props) => {
         <div className="messages max-w-xs">
           <div>{messagesElements}</div>
           <div>
-            <div><textarea value={props.messages.newMessageText}
+            <div><textarea value={state.newMessageText}
                            className="border-2"
                            onChange={onNewMessageChange}></textarea>
             </div>

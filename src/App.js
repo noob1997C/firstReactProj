@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
-import Messages from './components/Messages/Messages';
+import MessagesContainer from './components/Messages/MessagesContainer';
 import Navbar from './components/Navbar';
 import Profile from './components/Profile/Profile';
 import Music from './components/Music/Music';
@@ -19,9 +19,8 @@ function App(props) {
           <Navbar />
           <div className='app-wrapper-content'>
             <Routes>
-              <Route path='/messages' element={<Messages store={props.store} messages={props.state.messagesPage}/>}/>
-              <Route path='/profile' element={<Profile profilePage={props.state.profilePage} 
-                                                       dispatch={props.dispatch}/>}/>
+              <Route path='/messages' element={<MessagesContainer store={props.store}/>}/>
+              <Route path='/profile' element={<Profile store={props.store}/>}/>
               <Route path='/music' element={<Music/>}/>
               <Route path='/news' element={<News/>}/>
               <Route path='/settings' element={<Settings/>}/>
@@ -31,7 +30,5 @@ function App(props) {
     </BrowserRouter>
   );
 }
-
-
 
 export default App;
