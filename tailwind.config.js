@@ -44,6 +44,7 @@ module.exports = {
           maxWidth: '100%',
           marginTop: '4px',
           padding: '4px',
+          minHeight: '36px',
         },
         '.dialog-item': {
           color: '#00628c',
