@@ -1,6 +1,5 @@
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DialogItem";
-import { updateNewMessageTextCreater, sendMessageCreater } from "../../redux/messagesReducer";
 
 const Messages = (props) => {
 

@@ -1,23 +1,29 @@
 import Messages from "./Messages";
 import { updateNewMessageTextCreater, sendMessageCreater } from "../../redux/messagesReducer";
+import StoreContext from "../../StoreContext";
 
 const MessagesContainer = (props) => {
+	return (
+		<StoreContext.Consumer>
+			{
+				(store) => {
 
-    const state = props.store.getState().messagesPage;
+					const state = store.getState().messagesPage;
 
-    let onSendMessageClick = () => {
-        props.store.dispatch(sendMessageCreater());
-    };
+					let onSendMessageClick = () => {
+						store.dispatch(sendMessageCreater());
+					};
 
-    let onNewMessageChange = (text) => {
-        props.store.dispatch(updateNewMessageTextCreater(text));
-    };
-
-    return (
-        <Messages updateNewMessageText={onNewMessageChange}
-            sendMessage={onSendMessageClick}
-            messagesPage={state} />
-    );
+					let onNewMessageChange = (text) => {
+						store.dispatch(updateNewMessageTextCreater(text));
+					};
+					return <Messages updateNewMessageText={onNewMessageChange}
+						sendMessage={onSendMessageClick}
+						messagesPage={state} />
+				}
+			}
+		</StoreContext.Consumer>
+	);
 }
 
 export default MessagesContainer;
